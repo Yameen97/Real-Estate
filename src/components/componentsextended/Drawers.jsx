@@ -42,6 +42,9 @@ const Drawers = () => {
         <Typography variant="h4" py={2} sx={{ color: "#dbc895" }}>
           Site Title
         </Typography>
+        <Typography variant="h4" py={2} sx={{ color: "#dbc895" }}>
+          Site Title
+        </Typography>
         <List>
 
 
