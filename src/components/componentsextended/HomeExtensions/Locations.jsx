@@ -1,73 +1,52 @@
 import { Box, Stack, styled } from "@mui/material";
 import React from "react";
-import { StyledOuterAlignedStack, StyledImageBox } from "../../UI/StacknBoxes";
+import { StyledOuterAlignedStack, StyledImageStack } from "../../UI/StacknBoxes";
 import { StyledHeading } from "../../UI/TypoGraphies";
+import classes from '../../CssFiles/Locations.module.css'
 
 const StyledLocationBox = styled(Box)(({ theme }) => ({
   height: "150px",
-  backgroundRepeat: "no-repeat",
-  borderRadius: "4px",
-  boxShadow: "10",
-  backgroundSize: "150%",
-  backgroundPosition: "center",
-  marginBottom: "6%",
-  transition: 'all 0.5s ease-out',
-
-  '&:hover': {
-    backgroundSize: "180%",
-
-  },
   [theme.breakpoints.up("sm")]: {
-    flexDirection: "row",
-    height: "200px",
-    marginBottom: "0",
+    height: "240px",
   },
 }));
 
+
 const Locations = () => {
   const image =
-    "https://i.pinimg.com/736x/2e/c4/ca/2ec4ca6880388b8bd39e73859051db21.jpg";
+    "https://cdnp.flypgs.com/files/Sehirler-long-tail/Paris/eyfel-tower.jpg";
 
   return (
-    <StyledOuterAlignedStack sx={{ height: { xs: "725px", sm: "515px" } }}>
+    <StyledOuterAlignedStack >
       <Stack xs={1} p={1}>
         <StyledHeading>FIND OUR PROPERTIES IN THESE CITIES</StyledHeading>
       </Stack>
 
-      <Stack xs={11} spacing={"2%"} pt={2}>
-        <StyledImageBox>
-          <StyledLocationBox
-            mr={"2%"}
-            sx={{
-              backgroundImage: `url(${image})`,
-              width: { xs: "100%", sm: "30%" },
-            }}
-          ></StyledLocationBox>
+      <Stack xs={11} >
+      
+        <StyledImageStack direction='row' > 
+  
+        <StyledLocationBox mb={1} sx={{width: { xs: "100%", sm: "16rem" }, marginRight: { xs: "none", sm: "12px" }}}>
+        <img className={classes.img} src={image} alt=''/>
+    </StyledLocationBox>
+    
 
-          <StyledLocationBox
-            sx={{
-              backgroundImage: `url(${image})`,
-              width: { xs: "100%", sm: "65%" },
-            }}
-          ></StyledLocationBox>
-        </StyledImageBox>
+        <StyledLocationBox mb={1} sx={{width: { xs: "100%", sm: "36rem" }}}>
+        <img className={classes.img} src={image} alt=''/>
+    </StyledLocationBox>
 
-        <StyledImageBox>
-          <StyledLocationBox
-            mr={"2%"}
-            sx={{
-              backgroundImage: `url(${image})`,
-              width: { xs: "100%", sm: "65%" },
-            }}
-          ></StyledLocationBox>
+    </StyledImageStack>
+    <StyledImageStack mt={1} direction='row' > 
 
-          <StyledLocationBox
-            sx={{
-              backgroundImage: `url(${image})`,
-              width: { xs: "100%", sm: "30%" },
-            }}
-          ></StyledLocationBox>
-        </StyledImageBox>
+    <StyledLocationBox mb={1} sx={{width: { xs: "100%",sm: "36rem" }, marginRight: { xs: "none", sm: "12px" }}}>
+        <img className={classes.img} src={image} alt=''/>
+    </StyledLocationBox>
+
+        <StyledLocationBox mb={1} sx={{width: { xs: "100%", sm: "16rem" }}}>
+        <img className={classes.img} src={image} alt=''/>
+    </StyledLocationBox>
+
+    </StyledImageStack>
       </Stack>
     </StyledOuterAlignedStack>
   );

@@ -1,18 +1,19 @@
 import { Stack } from '@mui/material'
 import React from 'react'
-import { StyledOuterAlignedStack } from "../../UI/StacknBoxes";
-import { StyledHeading } from '../../UI/TypoGraphies';
+import { StyledOuterAlignedStack } from "../../../UI/StacknBoxes";
+import { StyledHeading } from '../../../UI/TypoGraphies';
+import FetchReviews from './FetchReviews';
 
 const BoxFifth = () => {
   return (
     <StyledOuterAlignedStack>
-    <Stack xs={1} pt={2}>
+    <Stack xs={1} pt={4}>
     <StyledHeading>
-    Latest News Feeds
+    Clients Feedback
     </StyledHeading>
     </Stack>
     <Stack xs={11}>
-        
+      <FetchReviews/>
     </Stack>
     
 </StyledOuterAlignedStack>

@@ -4,19 +4,23 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import "swiper/css/pagination";
+// import "swiper/css/effect-fade";
 import "../../CssFiles/Home.css";
 // import required modules
-import { Navigation, EffectFade } from "swiper";
-
+import { Navigation, EffectFade, Pagination, Autoplay } from "swiper";
 import { Box, styled } from "@mui/material";
 import SliderItems from './SliderItems';
-import { StyledBox } from '../../UI/StacknBoxes';
+import TestSlider from './SliderImages';
 
 
 const StyledParentBox = styled(Box)({
   display:'flex', 
-  justifyContent:'center'
+  justifyContent:'center',
+  alignItems:'center'
 });
+
 
 const Slider = () => {
 
@@ -28,27 +32,33 @@ const Slider = () => {
         <SliderItems/>
 
         <Swiper
-        effect
+        // effect={'fade'}
+        loop
         speed={800}
         slidesPerView={1}
-        navigation={true}
-        modules={[Navigation, EffectFade]}
+        navigation={{ background: 'black'}}
+        pagination={{clickable: true}}
+        autoplay={{delay:3000}}
+        modules={[Navigation, EffectFade, Pagination, Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
-          <StyledBox
-          sx={{backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(${image})`}}/>
-        </SwiperSlide>
+          <TestSlider>
+            <img src={image} alt="" />
+          </TestSlider>
+          </SwiperSlide>
 
         <SwiperSlide>
-          <StyledBox
-          sx={{backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(${image})`}}/>
-        </SwiperSlide>
+          <TestSlider>
+            <img src={image} alt="" />
+          </TestSlider>
+          </SwiperSlide>
 
-        <SwiperSlide>
-          <StyledBox
-          sx={{backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(${image})`}}/>
-        </SwiperSlide>
+          <SwiperSlide>
+          <TestSlider>
+            <img src={image} alt="" />
+          </TestSlider>
+          </SwiperSlide>
 
       </Swiper>
       </StyledParentBox>

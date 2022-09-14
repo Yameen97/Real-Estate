@@ -21,8 +21,8 @@ const StyledTextField = styled(TextField)({
   width: "50%",
   backgroundColor: "white",
   color: "white",
-  borderTopLeftRadius: "15px",
-  borderBottomLeftRadius: "15px",
+  borderTopLeftRadius: "10px",
+  borderBottomLeftRadius: "10px",
   height: "2.5rem",
   noBorder: {
     border: "none",
@@ -32,8 +32,8 @@ const StyledTextField = styled(TextField)({
 const StyledButton = styled(Button)({
   width: "20%",
   height: "2.5rem",
-  borderTopRightRadius: "15px",
-  borderBottomRightRadius: "15px",
+  borderTopRightRadius: "10px",
+  borderBottomRightRadius: "10px",
   borderTopLeftRadius: "0px",
   borderBottomLeftRadius: "0px",
   background: "#dbc895",
@@ -42,7 +42,7 @@ const StyledButton = styled(Button)({
 
 const Footer = () => {
   return (
-    <Box position="static" backgroundColor="#222222" bottom="0">
+    <Box mt={5} position="static" backgroundColor="#fff" bottom="0">
       <Grid
         container
         spacing={5}
@@ -100,7 +100,7 @@ const Footer = () => {
               required
               // fullWidth
               id="email"
-              disableUnderline={true}
+              disableunderline='true'
               // label="Phone Number"
               name="email"
               autoFocus

@@ -1,35 +1,24 @@
-import {  Box, Stack, styled } from "@mui/material";
+import { Stack, styled } from "@mui/material";
 import React from "react";
 import { StyledOuterHomeStack } from "../../UI/StacknBoxes";
 import { StyledHeading, StyledBoxText } from '../../UI/TypoGraphies';
+import classes from '../../CssFiles/Locations.module.css'
 
 const StyledStackInner = styled(Stack)(({ theme }) =>({
-  width: "100%",
-  height: "100%",
-  display: "flex",
   justifyContent: "center",
-  textAlign:'center',
+  alignItems:'center',
   [theme.breakpoints.up("sm")]: {
     width: "50%",
     textAlign:'none'
   },
-
 }));
 
-const StyledBox = styled(Box)({
-    height: "65%",
-    backgroundRepeat: "no-repeat",
-    borderRadius: '3px',
-    boxShadow: '10',
-    backgroundSize:  "100%",
-    backgroundPosition: 'center'
-  });
 
 const RandomDetails = () => {
-    const image= "https://i.pinimg.com/736x/2e/c4/ca/2ec4ca6880388b8bd39e73859051db21.jpg";
+    const image= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRslY2g2jfzxtwN94IJYTGsUpWih8IndlT_Gg&usqp=CAU";
 
   return (
-    <StyledOuterHomeStack  direction='row' sx={{background: "#D3D3D3"}}>
+    <StyledOuterHomeStack  direction='row'>
       <StyledStackInner sx={{ paddingLeft: { xs: "none", sm: "6%"}}}>
         <StyledHeading pb={2}>
             Newly launched campaign in whitby agencies
@@ -42,14 +31,9 @@ const RandomDetails = () => {
 
       </StyledStackInner>
       
-      <StyledStackInner px={3} sx={{display:{xs:'none', sm:'block'}, paddingTop:{sm:'10%', md:'6%'}}}>
-        <StyledBox
-        sx={{
-          position:'relative',
-          backgroundImage: `url(${image})`}}>
-        </StyledBox>
-        </StyledStackInner>
-       
+      <StyledStackInner sx={{display:{xs:'none', sm:'flex'}}}>
+        <img className={classes.imgdetails} src={image} alt=''/>
+    </StyledStackInner>
     </StyledOuterHomeStack>
   );
 };

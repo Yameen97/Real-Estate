@@ -1,8 +1,14 @@
+import { Box } from '@mui/material'
 import React from 'react'
+import ContactsCard from '../componentsextended/ContactsExtensions/ContactsCard'
+import HeaderContacts from '../componentsextended/ContactsExtensions/HeaderContacts'
 
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
+    <Box sx={{background:'#fff'}}>
+      <HeaderContacts />
+      <ContactsCard/>
+    </Box>
   )
 }
 
