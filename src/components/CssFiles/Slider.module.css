@@ -15,8 +15,15 @@
     opacity: 0.4;
   }
   
+  .imgSlider-button-prev { 
+    color: grey;
+  } 
+  .imgSlider-button-next { 
+    color: grey;
+  }
+
   @media (min-width: 600px) {
     .imgSlider img {
-      height: 500px;
+      height: 520px;
     }
   }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { StyledOuterAlignedStack } from "../../../UI/StacknBoxes";
 import { StyledHeading } from "../../../UI/TypoGraphies";
 import OfferCardCreator from "./OfferCardCreator";
+import OfferSlider from "./OfferSlider";
 
 const StyledFiltersButton = styled(Button)({
   height: "2.7rem",
@@ -18,12 +19,16 @@ const OfferCards = () => {
         <StyledHeading>Featured Properties</StyledHeading>
       </Stack>
 
-      <Box flex={11} sx={{ width: { sm: "90%", md: "56rem" } }}>
+      <Box flex={11} ml={10} sx={{ width: { sm: "90%", md: "56rem" } , display:{xs:'none', sm:'flex'}}}>
         <OfferCardCreator />
       </Box>
 
+      <Box flex={11} sx={{ width: '100%' , display:{xs:'flex', sm:'none'}}}>
+        <OfferSlider />
+      </Box>
+
       {/* <StyledButtonBox> */}
-      <Box mt={8} mb={3}>
+      <Box sx={{marginTop:{xs:'10px',sm:'50px'}}} mb={3}>
       <Link
         style={{ textDecoration: "none", height: "2.7rem", width: "18rem" }}
         to="/properties"

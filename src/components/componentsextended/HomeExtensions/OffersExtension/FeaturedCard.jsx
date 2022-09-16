@@ -4,16 +4,17 @@ import classes from '../../../CssFiles/OfferHover.module.css'
 
 const StyledBox= styled(Box)(({ theme }) => ({
     width:'8.5rem',
-    height:'12rem',
-    marginTop:'none',
+    height:'9rem',
+    marginTop:'-80px',
     marginBottom:'none',
-    
-    marginRight:'16px', 
+    marginRight:'16px',
+    marginLeft:'-36px', 
   [theme.breakpoints.up("sm")]: {
     width:'13rem',
     height:'14rem',
     marginTop:'32px',
-    marginBottom:'64px'
+    marginBottom:'64px',
+    marginRight:'40px'
   },
 }));
 

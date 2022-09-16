@@ -24,7 +24,6 @@ const StyledSearchButton = styled(Button)(({ theme }) =>({
   }));
 
   const StyledMainBox = styled(Box)(({ theme }) =>({
-    paddingLeft:'none',
     width:'100%',
     display: 'flex',
     justifyContent:'center',

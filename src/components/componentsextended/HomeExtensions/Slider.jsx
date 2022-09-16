@@ -14,7 +14,6 @@ import { Box, styled } from "@mui/material";
 import SliderItems from './SliderItems';
 import TestSlider from './SliderImages';
 
-
 const StyledParentBox = styled(Box)({
   display:'flex', 
   justifyContent:'center',
@@ -24,9 +23,8 @@ const StyledParentBox = styled(Box)({
 
 const Slider = () => {
 
-  const image= "https://www.homestratosphere.com/wp-content/uploads/2020/06/luxury-house-july062020-min.jpg";
-  
-    return (
+ const image= "https://www.homestratosphere.com/wp-content/uploads/2020/06/luxury-house-july062020-min.jpg";
+  return (
       <StyledParentBox>
 
         <SliderItems/>
@@ -36,7 +34,7 @@ const Slider = () => {
         loop
         speed={800}
         slidesPerView={1}
-        navigation={{ background: 'black'}}
+        navigation={true}
         pagination={{clickable: true}}
         autoplay={{delay:3000}}
         modules={[Navigation, EffectFade, Pagination, Autoplay]}
@@ -61,6 +59,7 @@ const Slider = () => {
           </SwiperSlide>
 
       </Swiper>
+
       </StyledParentBox>
 
   )

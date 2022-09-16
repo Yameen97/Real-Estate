@@ -85,24 +85,25 @@
 }
 
 @media (max-width: 600px) {
+
   .container .box {
-    width: 7.5rem;
-    height: 9rem;
+    width: 10rem;
+    height: 14rem;
 }
 
 .content {
-  width: 108%;
+  width: 154%;
   height: 100%;
 }
 
   .imgBox img {
-    width: 7.5rem;
-    height: 9rem;
+    width: 10rem;
+    height: 14rem;
   }
 
   .lowerContent {
-    width: 7.5rem;
-    height: 11.3rem;
+    width: 10rem;
+    height: 16.5rem;
   }
   .container .box:hover .content {
     transform: translate(0, 2.5rem);

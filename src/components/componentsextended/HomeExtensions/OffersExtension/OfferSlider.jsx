@@ -3,28 +3,27 @@ import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "swiper/css/free-mode";
 // import "swiper/css/effect-fade";
 import "../../../CssFiles/Home.css";
 // import required modules
-import { Autoplay, Pagination, FreeMode } from "swiper";
+import { Navigation, Autoplay, FreeMode } from "swiper";
 import { Box, styled } from "@mui/material";
-import data from './DummyReviews'
-import ReviewResults from './ReviewResults';
+import FeaturedCard from './FeaturedCard';
+import data from '../../SearchExtensions/DummyData';
 
 
 const StyledParentBox = styled(Box)({
   display:'flex', 
   width:'100%',
   height:'22rem',
-  paddingTop:'-10px',
-  
+  paddingTop:'-10px'
 });
 
 
-const XsFetchSlider = () => {  
+const OfferSlider = () => {  
     const products = data.products;
 
     return (
@@ -34,27 +33,28 @@ const XsFetchSlider = () => {
         // effect={'fade'}
         loop
         speed={800}
-        slidesPerView={3}
+        slidesPerView={1}
         spaceBetween={0}
         freeMode={true}
         grabCursor={true}
-        pagination={{clickable: true}}
+        navigation={{ background: 'black'}}
         autoplay={{delay:2000}}
-        modules={[Pagination, Autoplay, FreeMode]}
+        modules={[Navigation, Autoplay, FreeMode]}
         className="mySwiper"
       >
-
-            
-          {products.slice(0,6).map(prod => (
+ 
+        {/* <SwiperSlide></SwiperSlide> */}
+         
+        {products.slice(0,8).map(prod => (
             <SwiperSlide key={prod.id}>
-            <ReviewResults
-              key={prod.id}
-              id={prod.id}
-              image={prod.image}
-              name={prod.name}
-              review={prod.review}
-              />
-            
+          <FeaturedCard
+            key={prod.id}
+            id={prod.id}
+            image={prod.image}
+            location={prod.location}
+            city={prod.city}
+            price={prod.Price}
+          />
           </SwiperSlide>
         ))}
         
@@ -64,4 +64,4 @@ const XsFetchSlider = () => {
   )
 }
 
-export default XsFetchSlider
+export default OfferSlider

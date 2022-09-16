@@ -20,11 +20,11 @@ const RandomDetails = () => {
   return (
     <StyledOuterHomeStack  direction='row'>
       <StyledStackInner sx={{ paddingLeft: { xs: "none", sm: "6%"}}}>
-        <StyledHeading pb={2}>
+        <StyledHeading pb={2} sx={{textAlign:{xs:'center', sm:'left'}}}>
             Newly launched campaign in whitby agencies
         </StyledHeading>
 
-        <StyledBoxText>
+        <StyledBoxText >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, ut iure! Similique laborum, obcaecati esse deleniti ipsa accusamus cupiditate ea sint ullam qui delectus odio est et mollitia expedita minima.
         </StyledBoxText>
 

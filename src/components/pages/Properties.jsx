@@ -35,6 +35,7 @@ const Properties = () => {
 
   return (
     <Box sx={{background:'#fff'}}>
+        
       <HeaderProperties />
 
       {/* Small screen filter button */}

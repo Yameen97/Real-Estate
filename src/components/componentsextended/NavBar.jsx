@@ -33,7 +33,7 @@ const Styledlogin = styled(Button)({
 });
 
 const NavBar = () => {
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState()
 
   return (
     <AppBar sx={{ background: "#222222" }} position="static">
@@ -63,10 +63,10 @@ const NavBar = () => {
           }}
           aria-label="secondary tabs example"
         >
-          <StyledTab key='Home' label='Home' component={Link} to='home'/>
-          <StyledTab key='Properties' label='Properties' component={Link} to='properties'/>
-          <StyledTab key='About Us' label='About Us' component={Link} to='AboutUs'/>
-          <StyledTab key='Contact Us' label='Contact Us' component={Link} to='/ContactUs'/>
+          <StyledTab key='Home' label='Home' value={0} component={Link} to='home'/>
+          <StyledTab key='Properties' label='Properties' value={1} component={Link} to='properties'/>
+          <StyledTab key='About Us' label='About Us' value={2} component={Link} to='AboutUs'/>
+          <StyledTab key='Contact Us' label='Contact Us' value={3} component={Link} to='/ContactUs'/>
         </Tabs>
 
         {/* <Stack
@@ -93,7 +93,7 @@ const NavBar = () => {
         </Stack> */}
 
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
-          <Link style={{ textDecoration: "none" }} to="/login">
+          <Link style={{ textDecoration: "none" }} to="/admin">
             <Styledlogin>Login</Styledlogin>
           </Link>
         </Box>

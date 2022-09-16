@@ -29,19 +29,18 @@ const Drawers = () => {
       <Drawer
         PaperProps={{
           sx: {
-            width: "60%",
+            marginTop:'56px',
+            width: "65%",
             textAlign: "center",
             paddingTop: "10%",
             background: "#222222",
             color: "white",
+            paddingLeft:'2px'
           },
         }}
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
       >
-        <Typography variant="h4" py={2} sx={{ color: "#dbc895" }}>
-          Site Title
-        </Typography>
         <Typography variant="h4" py={2} sx={{ color: "#dbc895" }}>
           Site Title
         </Typography>

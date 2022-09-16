@@ -18,7 +18,7 @@ const Locations = () => {
 
   return (
     <StyledOuterAlignedStack >
-      <Stack xs={1} p={1}>
+      <Stack xs={1} p={1} mb={2}>
         <StyledHeading>FIND OUR PROPERTIES IN THESE CITIES</StyledHeading>
       </Stack>
 

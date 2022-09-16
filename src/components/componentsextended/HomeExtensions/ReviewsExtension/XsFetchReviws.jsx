@@ -18,7 +18,7 @@ import ReviewResults from './ReviewResults';
 const StyledParentBox = styled(Box)({
   display:'flex', 
   width:'100%',
-  height:'22rem',
+  height:'19rem',
   paddingTop:'-10px',
   
 });
@@ -34,7 +34,7 @@ const XsFetchSlider = () => {
         // effect={'fade'}
         loop
         speed={800}
-        slidesPerView={3}
+        slidesPerView={1}
         spaceBetween={0}
         freeMode={true}
         grabCursor={true}

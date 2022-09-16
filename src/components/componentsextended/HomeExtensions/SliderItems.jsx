@@ -8,7 +8,6 @@ import {
   TextField,
   MenuItem,
   Select,
-  Tab,
   Tabs,
   FormControl,
   InputLabel,
@@ -35,11 +34,9 @@ const StyledParentSearch = styled(Box)(({ theme }) => ({
   alignItems: "center",
   flexDirection: "column",
   color: "white",
-  marginTop: "8px",
   [theme.breakpoints.up("sm")]: {
     height: "270px",
     paddingTop: "2%",
-    marginTop: "none",
   },
 }));
 
@@ -55,24 +52,31 @@ const StyledLowerItems = styled(Box)(({ theme }) => ({
 const StyledSearchButton = styled(Button)(({ theme }) => ({
   background: "#dbc895",
   justifySelf: "flex-end",
-  width: "5rem",
-  height: "2rem",
+  width: "3.6rem",
+  height: "1.5rem",
+  fontSize:'10px',
   color: "black",
   boxShadow: "30",
   [theme.breakpoints.up("sm")]: {
+    fontSize:'14px',
     width: "8rem",
     height: "2.3rem",
   },
 }));
 
-const StyledRentSale = styled(Tab)(({ theme }) => ({
+const StyledRentSale = styled(Button)(({ theme }) => ({
   borderTopRightRadius: "5px",
   borderBottomRightRadius: "2px",
   borderTopLeftRadius: "5px",
   borderBottomLeftRadius: "2px",
   marginTop: "0",
-  paddingTop: '-10px',
+  height:'28px',
+  "&:focus": {
+    background: "#dbc895", 
+    color: "black"
+  },
   [theme.breakpoints.up("sm")]: {
+    height:'35px',
     marginTop: "6%",
   },
 }));
@@ -108,7 +112,7 @@ const StyledStack = styled(Stack)(({ theme }) => ({
 }));
 
 const StyledHeadingSmall = styled(Typography)(({ theme }) => ({
-  fontSize: "10px",
+  fontSize: "11px",
   fontWeight: "80",
   [theme.breakpoints.up("sm")]: {
     fontSize: "20px",
@@ -116,37 +120,32 @@ const StyledHeadingSmall = styled(Typography)(({ theme }) => ({
 }));
 
 const StyledHeadingLarge = styled(Typography)(({ theme }) => ({
-  fontSize: "16px",
+  fontSize: "17px",
   [theme.breakpoints.up("sm")]: {
     fontSize: "35px",
   },
 }));
 
 const SliderItems = () => {
-  const [sale, setSale] = useState(false);
   const [type, setType] = useState("");
-  const [saleOpened, setsaleOpened] = useState(true);
-  const [rentOpened, setrentOpened] = useState(false);
-
-  const focusHandler = () => {
-    setSale(!sale);
-  };
+  const [saleOpened, setsaleOpened] = useState(1);
+  const [rentOpened, setrentOpened] = useState(0);
 
   const saleFocusHandler = () => {
-    setsaleOpened(true);
-    setrentOpened(false);
+    setsaleOpened(1);
+    setrentOpened(0);
   };
 
   const rentFocusHandler = () => {
-    setrentOpened(true);
-    setsaleOpened(false);
+    setrentOpened(1);
+    setsaleOpened(0);
   };
 
   return (
     <StyledStack>
       {/* Home page heading */}
 
-      <StyledBox mb={0.5}>
+      <StyledBox pb={2}>
         <StyledHeadingSmall>THE BEST WAY</StyledHeadingSmall>
 
         <StyledHeadingLarge>TO FIND YOUR PERFECT HOME.</StyledHeadingLarge>
@@ -156,16 +155,15 @@ const SliderItems = () => {
 
       <StyledParentSearch>
         <Stack
+        mb={1.2}
           direction="row"
           divider={<Divider orientation="vertical" flexItem />}
-          sx={{ marginRight: { xs: "10%", sm: "30%", md: "40.8%" }}}
+          sx={{ height:{xs:'18px',sm:'33px'}, marginRight: { xs: "24%", sm: "36%", md: "40.8%" }}}
         >
           <Tabs
-            value={sale}
-            onChange={focusHandler}
             aria-label="simple tabs example"
           >
-
+            
             <StyledRentSale
               sx={
                 saleOpened
@@ -173,9 +171,7 @@ const SliderItems = () => {
                   : { color: "#dbc895", background: "#222222" }
               }
               onClick={saleFocusHandler}
-              key="Sale"
-              label="Sale"
-            />
+            >Sale</StyledRentSale>
             <StyledRentSale
               sx={
                 rentOpened
@@ -183,9 +179,7 @@ const SliderItems = () => {
                   : { color: "#dbc895", background: "#222222" }
               }
               onClick={rentFocusHandler}
-              key="Rent"
-              label="Rent"
-            />
+            >Rent</StyledRentSale>
           </Tabs>
         </Stack>
 
@@ -193,7 +187,7 @@ const SliderItems = () => {
         <StyleInputBox>
           <Stack>
             <Box>
-              {saleOpened && (
+              {(saleOpened===1) && (
                 <FormControl fullWidth>
                   <InputLabel
                     size="small"
@@ -228,7 +222,7 @@ const SliderItems = () => {
                 </FormControl>
               )}
 
-              {rentOpened && (
+              {(rentOpened===1) && (
                 <FormControl fullWidth>
                   <InputLabel size="small" sx={{ color: "darkgrey" }}>
                     Type
@@ -310,7 +304,8 @@ const SliderItems = () => {
         </StyleInputBox>
 
         {/* Search Button */}
-        <Box pt={1} sx={{ paddingLeft: { xs: "none", sm: "24%", md:'40%' } }}>
+        <Box sx={{ paddingLeft: { xs: "none", sm: "24%", md:'40%' },
+      paddingTop: { xs: "2px", sm: "8px"} }}>
           <Link
             style={{
               textDecoration: "none",

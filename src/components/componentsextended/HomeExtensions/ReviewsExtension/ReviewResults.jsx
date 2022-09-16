@@ -4,7 +4,7 @@ import classes from '../../../CssFiles/Review.module.css'
 const ReviewResults = (props) => {
 
   return (
-    <Box mt={3} p={1} sx={{width:'23rem'}}>
+    <Box px={1} mb={3} sx={{width:'23rem'}}>
     <Box className={classes.container}>
     <Box mx={2} className={classes.box}>
         <Box className={classes.imgBox}>

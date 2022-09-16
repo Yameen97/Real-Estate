@@ -46,9 +46,18 @@ body {
   object-fit: cover;
 }
 
-.swiper-button-prev { 
-  color: grey;
-} 
+.swiper-pagination-bullet {
+  opacity: 0.5;
+  background-color: grey !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.swiper-button-prev{ 
+  color: grey !important;
+ } 
 .swiper-button-next { 
-  color: grey;
+   color: grey !important;
 }

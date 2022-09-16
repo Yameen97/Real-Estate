@@ -4,9 +4,10 @@ import Home from "./components/pages/Home";
 import LogIn from "./components/pages/LogIn";
 import Properties from "./components/pages/Properties";
 import {Routes,Route, Navigate} from 'react-router-dom';
-import NavBar from "./components/componentsextended/NavBar";
 import { Fragment } from "react";
-import Footer from "./components/componentsextended/Footer";
+import Admin from "./components/pages/Admin";
+import NavBar from './components/componentsextended/NavBar'
+import Footer from './components/componentsextended/Footer'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path='aboutus' element={<AboutUs />}/>
       <Route path='contactus' element={<ContactUs/>}/>
       <Route path='login' element={<LogIn/>}/>
+      <Route path='admin' element={<Admin/>}/>
       <Route
       path="*"
       element={<Navigate to="/" />}/>
