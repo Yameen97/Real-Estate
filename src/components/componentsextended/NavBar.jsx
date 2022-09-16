@@ -33,10 +33,10 @@ const Styledlogin = styled(Button)({
 });
 
 const NavBar = () => {
-  const [value, setValue] = useState()
+  const [value, setValue] = useState('0')
 
   return (
-    <AppBar sx={{ background: "#222222" }} position="static">
+    <AppBar sx={{ background: "primary" }} position="static">
       <StyledToolbar>
         <Drawers />
         <Link style={{ textDecoration: "none" }} to="/home">
@@ -57,16 +57,16 @@ const NavBar = () => {
           sx={{ display: { xs: "none", sm: "block" } }}
           value={value}
           onChange={(e, value) =>{setValue(value)}}
-          textColor='#fff'
+          textColor='secondary'
           TabIndicatorProps={{
             sx: { backgroundColor: "white"}
           }}
           aria-label="secondary tabs example"
         >
-          <StyledTab key='Home' label='Home' value={0} component={Link} to='home'/>
-          <StyledTab key='Properties' label='Properties' value={1} component={Link} to='properties'/>
-          <StyledTab key='About Us' label='About Us' value={2} component={Link} to='AboutUs'/>
-          <StyledTab key='Contact Us' label='Contact Us' value={3} component={Link} to='/ContactUs'/>
+          <StyledTab key='Home' label='Home' value={'0'} component={Link} to='home'/>
+          <StyledTab key='Properties' label='Properties' value={'1'} component={Link} to='properties'/>
+          <StyledTab key='About Us' label='About Us' value={'2'} component={Link} to='AboutUs'/>
+          <StyledTab key='Contact Us' label='Contact Us' value={'3'} component={Link} to='/ContactUs'/>
         </Tabs>
 
         {/* <Stack

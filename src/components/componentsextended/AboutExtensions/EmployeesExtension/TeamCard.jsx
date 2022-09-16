@@ -1,24 +1,27 @@
 import { Box, Card, Stack, styled, Typography } from "@mui/material";
 import classes from '../../../CssFiles/Team.module.css'
 
-const StyledTeamCard = styled(Card)({
+const StyledTeamCard = styled(Card)(({ theme }) =>({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#222222",
     color:'white',
-    margin:'16px',
+    margin:'12px',
     padding:0,
-    boxShadow:'1px 1px 20px 1px grey'
-  });
-
+    boxShadow:'1px 1px 20px 1px grey',
+    [theme.breakpoints.up("lg")]: {
+      margin:'16px'
+    },
+  }));
+  
   
 const TeamCard = (props) => {
 
   return (
     <StyledTeamCard sx={{borderRadius: "10px"}}>
-    <Stack  p={2} sx={{width:'170px', height:'210px'}} alignItems='center'>
+    <Stack  p={2} sx={{width:{xs:'130px', sm:'170px'}, height:{xs:'190px', sm:'210px'}}} alignItems='center'>
     <Box  className={classes.container}
     >
       <Stack mx={2} mb={1} className={classes.box}>

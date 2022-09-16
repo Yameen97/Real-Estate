@@ -42,3 +42,15 @@
   border-radius: 100px;
   border: 2px solid #dbc895;
 }
+
+@media (max-width: 600px) {
+  .container .box {
+    width: 6rem;
+    height: 6rem;
+}
+
+  .imgBox img {
+    width: 6rem;
+    height: 6rem;
+  }
+}

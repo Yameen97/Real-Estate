@@ -14,7 +14,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
 
 const Admin = () => {
   return (
-    <StyledBox style={{background: '#fff'}}>
+    <StyledBox style={{background: 'secondary'}}>
         <Box flex={3}>
           <AdminDrawer/>
         </Box>

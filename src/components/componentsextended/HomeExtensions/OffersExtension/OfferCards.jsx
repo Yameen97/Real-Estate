@@ -19,7 +19,7 @@ const OfferCards = () => {
         <StyledHeading>Featured Properties</StyledHeading>
       </Stack>
 
-      <Box flex={11} ml={10} sx={{ width: { sm: "90%", md: "56rem" } , display:{xs:'none', sm:'flex'}}}>
+      <Box flex={11} ml={10} sx={{ width: { sm: "90%", md: "55rem" } , display:{xs:'none', sm:'flex'}}}>
         <OfferCardCreator />
       </Box>
 

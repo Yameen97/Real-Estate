@@ -42,14 +42,13 @@ const StyledButton = styled(Button)({
 
 const Footer = () => {
   return (
-    <Box mt={5} position="static" backgroundColor="#fff" bottom="0">
+    <Box mt={5} position="static" bottom="0">
       <Grid
         container
         spacing={5}
-        pt={4}
         pl={2}
         height="15rem"
-        backgroundColor="#222222"
+        backgroundColor="primary"
       >
         <StyledGrid item sm={12} md={3} textAlign="center">
           <StyledBox mb={1}>

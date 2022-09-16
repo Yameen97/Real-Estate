@@ -5,11 +5,15 @@ import App from './App';
 import "swiper/css/bundle";
 import "./components/CssFiles/Home.css";
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material';
+import theme from './components/UI/Theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+  <ThemeProvider theme={theme}>
     <App />
+    </ThemeProvider>
   </BrowserRouter>
 );
 

@@ -5,7 +5,7 @@ import HeaderContacts from '../componentsextended/ContactsExtensions/HeaderConta
 
 const ContactUs = () => {
   return (
-    <Box sx={{background:'#fff'}}>
+    <Box sx={{background:'secondary'}}>
 
       <HeaderContacts />
       <ContactsCard/>

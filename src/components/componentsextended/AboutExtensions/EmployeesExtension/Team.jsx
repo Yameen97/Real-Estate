@@ -10,7 +10,7 @@ const Team = () => {
       <Typography variant='h4' sx={{color:'#dbc895'}}>OUR TEAM</Typography>
     </Stack>
 
-    <Box mb={4} flex={11} sx={{ width: { sm: "90%", md: "64rem" } }}>
+    <Box mb={4} flex={11} sx={{ width: {md: "100%", lg:'66rem'}}}>
       <TeamMapper />
     </Box>
 

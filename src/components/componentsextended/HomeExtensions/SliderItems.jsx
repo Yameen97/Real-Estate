@@ -8,7 +8,6 @@ import {
   TextField,
   MenuItem,
   Select,
-  Tabs,
   FormControl,
   InputLabel,
 } from "@mui/material";
@@ -160,10 +159,7 @@ const SliderItems = () => {
           divider={<Divider orientation="vertical" flexItem />}
           sx={{ height:{xs:'18px',sm:'33px'}, marginRight: { xs: "24%", sm: "36%", md: "40.8%" }}}
         >
-          <Tabs
-            aria-label="simple tabs example"
-          >
-            
+
             <StyledRentSale
               sx={
                 saleOpened
@@ -180,7 +176,6 @@ const SliderItems = () => {
               }
               onClick={rentFocusHandler}
             >Rent</StyledRentSale>
-          </Tabs>
         </Stack>
 
         {/* Home page search box */}

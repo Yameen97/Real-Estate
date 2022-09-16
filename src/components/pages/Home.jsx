@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 
 const Home = () => {
   return (
-    <Box style={{background: '#fff'}}>
+    <Box style={{background: 'secondary'}}>
       <Slider />
       <RandomDetails/>
       <OfferCards/>

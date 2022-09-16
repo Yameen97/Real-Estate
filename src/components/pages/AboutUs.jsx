@@ -6,7 +6,7 @@ import Team from '../componentsextended/AboutExtensions/EmployeesExtension/Team'
 
 const AboutUs = () => {
   return (
-    <Box sx={{background:'#fff'}}>
+    <Box sx={{background:'secondary'}}>
       <HeaderAbout/>
       <AboutCard/>
       <Team/>
