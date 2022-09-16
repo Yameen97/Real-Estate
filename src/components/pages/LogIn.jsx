@@ -42,7 +42,7 @@ const LogIn = () => {
           </Typography>
           <TextField
             sx={{ width: "250px", marginBottom: "10px" }}
-            id="email"
+            id="email-input"
             label="E-mail"
             type="email"
           />
@@ -55,7 +55,7 @@ const LogIn = () => {
           />
         </CardContent>
         <CardActions>
-          <Link style={{ textDecoration: "none" }} to="/">
+          <Link style={{ textDecoration: "none" }} to="/admin">
             <Button
               sx={{ width: "250px", height: "38px", marginBottom: "5px" }}
               variant="contained"

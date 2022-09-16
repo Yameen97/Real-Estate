@@ -12,6 +12,7 @@ import Footer from './components/componentsextended/Footer'
 function App() {
   return (
     <Fragment>
+      
       <NavBar/>
     <Routes>
       <Route path="/" element={<Navigate to="/home" />}/>

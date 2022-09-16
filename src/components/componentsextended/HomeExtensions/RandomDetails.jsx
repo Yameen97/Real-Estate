@@ -18,7 +18,7 @@ const RandomDetails = () => {
     const image= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRslY2g2jfzxtwN94IJYTGsUpWih8IndlT_Gg&usqp=CAU";
 
   return (
-    <StyledOuterHomeStack  direction='row'>
+    <StyledOuterHomeStack direction='row'>
       <StyledStackInner sx={{ paddingLeft: { xs: "none", sm: "6%"}}}>
         <StyledHeading pb={2} sx={{textAlign:{xs:'center', sm:'left'}}}>
             Newly launched campaign in whitby agencies

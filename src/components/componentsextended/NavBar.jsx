@@ -93,7 +93,7 @@ const NavBar = () => {
         </Stack> */}
 
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
-          <Link style={{ textDecoration: "none" }} to="/admin">
+          <Link style={{ textDecoration: "none" }} to="/login">
             <Styledlogin>Login</Styledlogin>
           </Link>
         </Box>

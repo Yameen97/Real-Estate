@@ -34,7 +34,7 @@ const Properties = () => {
   };
 
   return (
-    <Box sx={{background:'secondary'}}>
+    <Box sx={{background:'#fff'}}>
         
       <HeaderProperties />
 
