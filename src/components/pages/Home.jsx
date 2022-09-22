@@ -4,10 +4,19 @@ import OfferCards from "../componentsextended/HomeExtensions/OffersExtension/Off
 import Locations from "../componentsextended/HomeExtensions/Locations";
 import Reviews from "../componentsextended/HomeExtensions/ReviewsExtension/Reviews";
 import { Box } from "@mui/material";
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { navActions } from '../Redux/NavSlice';
 
 const Home = () => {
+  const dispatch= useDispatch();
+
+  useEffect(() => {
+    dispatch(navActions.toggle());
+  }, [dispatch]);
+
   return (
-    <Box style={{background: '#fff'}}>
+    <Box sx={{background: '#fff'}}>
       <Slider />
       <RandomDetails/>
       <OfferCards/>

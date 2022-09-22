@@ -4,17 +4,18 @@ import classes from '../../../CssFiles/OfferHover.module.css'
 
 const StyledBox= styled(Box)(({ theme }) => ({
     width:'8.5rem',
-    height:'9rem',
+    height:'16rem',
     marginTop:'-80px',
     marginBottom:'none',
     marginRight:'16px',
-    marginLeft:'-36px', 
+    marginLeft:'-67px', 
   [theme.breakpoints.up("sm")]: {
     width:'13rem',
     height:'14rem',
     marginTop:'32px',
-    marginBottom:'64px',
-    marginRight:'40px'
+    marginBottom:'70px',
+    marginRight:'40px',
+    marginLeft:'-30px', 
   },
 }));
 
@@ -43,12 +44,12 @@ const FeaturedCard = (props) => {
 
         <Box className={classes.content}>
           <Stack width="100%" textAlign='start'>
-            <Typography sx={{ fontSize:{xs:'12px', sm:"17px"} , fontWeight: "bold" }}>
+            <Typography sx={{ fontSize:'17px' , fontWeight: "bold" }}>
               {props.location}
             </Typography>
             <Stack direction="row" justifyContent="space-between">
-              <Typography sx={{ fontSize:{xs:'10px', sm:"12px"} }}>{props.city}</Typography>
-              <Typography sx={{ fontSize:{xs:'10px', sm:"12px"} }}>{props.price}</Typography>
+              <Typography sx={{ fontSize:"12px"}}>{props.city}</Typography>
+              <Typography sx={{ fontSize:"12px"}}>{props.price}</Typography>
             </Stack>
           </Stack>
         </Box>
@@ -56,12 +57,12 @@ const FeaturedCard = (props) => {
         {!mouseEnter && mouseLeave && (
           <Box className={classes.lowerContent}>
             <Stack width="100%" textAlign='start'>
-            <Typography sx={{ fontSize:{xs:'12px', sm:"17px"} , fontWeight: "bold" }}>
+            <Typography sx={{ fontSize:'17px' , fontWeight: "bold" }}>
               {props.location}
             </Typography>
             <Stack direction="row" justifyContent="space-between">
-              <Typography sx={{ fontSize:{xs:'10px', sm:"12px"} }}>{props.city}</Typography>
-              <Typography sx={{ fontSize:{xs:'10px', sm:"12px"} }}>{props.price}</Typography>
+              <Typography sx={{ fontSize:"12px"}}>{props.city}</Typography>
+              <Typography sx={{ fontSize:"12px"}}>{props.price}</Typography>
             </Stack>
           </Stack>
           </Box>

@@ -4,6 +4,9 @@ import FilterButtons, { FilterLargeButtons } from "../componentsextended/Propert
 import HeaderProperties from "../componentsextended/PropertiesExtensions/HeaderProperties";
 import Results from "../componentsextended/PropertiesExtensions/Results";
 import SearchFilter from "../componentsextended/PropertiesExtensions/SearchFilter";
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { navActions } from '../Redux/NavSlice';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -27,7 +30,13 @@ const StyledCardBox = styled(Box)(({ theme }) => ({
 }));
 
 const Properties = () => {
+  const dispatch= useDispatch();
+
+  useEffect(() => {
+    dispatch(navActions.toggle());
+  }, [dispatch]);
   const [filter, setfilter] = useState(true);
+  localStorage.setItem("userInfo", true) 
 
   const filterHandler = () => {
     setfilter(!filter);

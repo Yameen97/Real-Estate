@@ -3,13 +3,13 @@ import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/free-mode";
 // import "swiper/css/effect-fade";
 import "../../../CssFiles/Home.css";
 // import required modules
-import { Navigation, Autoplay, FreeMode } from "swiper";
+import { Autoplay, FreeMode,Pagination } from "swiper";
 import { Box, styled } from "@mui/material";
 import FeaturedCard from './FeaturedCard';
 import data from '../../SearchExtensions/DummyData';
@@ -37,9 +37,10 @@ const OfferSlider = () => {
         spaceBetween={0}
         freeMode={true}
         grabCursor={true}
-        navigation={{ background: 'black'}}
+        // navigation={{ background: 'black'}}
+        pagination={{clickable:true}}
         autoplay={{delay:2000}}
-        modules={[Navigation, Autoplay, FreeMode]}
+        modules={[ Autoplay, Pagination, FreeMode]}
         className="mySwiper"
       >
  

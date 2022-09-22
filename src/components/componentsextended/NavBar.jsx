@@ -12,11 +12,16 @@ import styled from "@emotion/styled";
 import Drawers from "./Drawers";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 
-const StyledTab = styled(Tab)({
+const StyledTab = styled(Tab)(({ theme }) => ({
   color: "#dbc895",
-  textDecoration: 'none',
-});
+  textDecoration: "none",
+  display: "none",
+  [theme.breakpoints.up("sm")]: {
+    display: "block",
+  },
+}));
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -33,12 +38,48 @@ const Styledlogin = styled(Button)({
 });
 
 const NavBar = () => {
-  const [value, setValue] = useState('0')
+  const [value, setValue] = useState("0");
+
+  useEffect(() => {
+    let data = localStorage.getItem("tab");
+    if (data === "null") {
+      data = "0";
+    }
+    setValue(data);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tab", value);
+  }, [value]);
+
+  const tab = [
+    {
+      label: "Home",
+      path: "home",
+      value: "0",
+    },
+    {
+      label: "Properties",
+      path: "properties",
+      value: "1",
+    },
+    {
+      label: "About Us",
+      path: "AboutUs",
+      value: "2",
+    },
+    {
+      label: "Contact Us",
+      path: "ContactUs",
+      value: "3",
+    },
+  ];
 
   return (
     <AppBar sx={{ background: "primary" }} position="static">
       <StyledToolbar>
         <Drawers />
+
         <Link style={{ textDecoration: "none" }} to="/home">
           <IconButton
             sx={{ display: { xs: "none", sm: "block" }, color: "white" }}
@@ -54,43 +95,25 @@ const NavBar = () => {
         <Tabs
           ml="auto"
           mr="auto"
-          sx={{ display: { xs: "none", sm: "block" } }}
           value={value}
-          onChange={(e, value) =>{setValue(value)}}
-          textColor='secondary'
+          onChange={(e, value) => setValue(value)}
+          textColor="secondary"
           TabIndicatorProps={{
-            sx: { backgroundColor: "white"}
+            sx: { backgroundColor: "white" },
           }}
           aria-label="secondary tabs example"
         >
-          <StyledTab key='Home' label='Home' value={'0'} component={Link} to='home'/>
-          <StyledTab key='Properties' label='Properties' value={'1'} component={Link} to='properties'/>
-          <StyledTab key='About Us' label='About Us' value={'2'} component={Link} to='AboutUs'/>
-          <StyledTab key='Contact Us' label='Contact Us' value={'3'} component={Link} to='/ContactUs'/>
+          {tab.map(({ label, path, value }) => (
+            <StyledTab
+              key={value}
+              label={label}
+              value={value}
+              component={Link}
+              to={path}
+              disableRipple
+            />
+          ))}
         </Tabs>
-
-        {/* <Stack
-          ml="auto"
-          mr="auto"
-          direction="row"
-          spacing={3}
-          sx={{ display: { xs: "none", sm: "block" } }}
-          // value={value}
-          // onChange={(e,value)=>{setValue(value)}}
-        >
-          <Link style={{ textDecoration: "none" }} to="/home">
-            <StyledButton>Home</StyledButton>
-          </Link>
-          <Link style={{ textDecoration: "none" }} to="/properties">
-            <StyledButton>Properties</StyledButton>
-          </Link>
-          <Link style={{ textDecoration: "none" }} to="/AboutUs">
-            <StyledButton>About Us</StyledButton>
-          </Link>
-          <Link style={{ textDecoration: "none" }} to="/ContactUs">
-            <StyledButton>Contact Us</StyledButton>
-          </Link>
-        </Stack> */}
 
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
           <Link style={{ textDecoration: "none" }} to="/login">

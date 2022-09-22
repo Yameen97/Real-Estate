@@ -87,23 +87,23 @@
 @media (max-width: 600px) {
 
   .container .box {
-    width: 10rem;
-    height: 14rem;
+    width: 12rem;
+    height: 16rem;
 }
 
 .content {
-  width: 154%;
-  height: 100%;
+  width: 185%;
+  height: 104%;
 }
 
   .imgBox img {
-    width: 10rem;
-    height: 14rem;
+    width: 12rem;
+    height: 16rem;
   }
 
   .lowerContent {
-    width: 10rem;
-    height: 16.5rem;
+    width: 12rem;
+    height: 19rem;
   }
   .container .box:hover .content {
     transform: translate(0, 2.5rem);

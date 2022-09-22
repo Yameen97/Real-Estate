@@ -15,7 +15,7 @@ const StyledFiltersButton = styled(Button)({
 const OfferCards = () => {
   return (
     <StyledOuterAlignedStack alignItems="center">
-      <Stack flex={1} mt={2}>
+      <Stack flex={1} mt={2} mb={2}>
         <StyledHeading>Featured Properties</StyledHeading>
       </Stack>
 

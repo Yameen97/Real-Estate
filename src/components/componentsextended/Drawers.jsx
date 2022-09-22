@@ -1,88 +1,144 @@
 import {
   Drawer,
-  ListItem,
-  List,
   IconButton,
   Typography,
-  Button,
   styled,
+  Tabs,
+  Tab,
 } from "@mui/material";
 import { Fragment, useState } from "react";
 import { Home, Search, Menu, Info, Mail, Login } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
-
-const StyledButton = styled(Button)({
+const StyledTab = styled(Tab)({
   color: "white",
-  '&:isactive': {
-    color: '#dbc895',
-    borderBottom: '1px solid #dbc895',
-  },
+  display: "flex",
+  justifyContent: "flex-start",
 });
 
 const Drawers = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [value, setValue] = useState('0');
 
+  const tab = [
+    {
+      label: "Home",
+      path: "home",
+      value: "0",
+      icon:<Home/>
+    },
+    {
+      label: "LogIn",
+      path: "login",
+      value: "4",
+      icon:<Login/>
+    },
+    {
+      label: "Properties",
+      path: "properties",
+      value: "1",
+      icon:<Search/>
+    },
+    {
+      label: "About Us",
+      path: "AboutUs",
+      value: "2",
+      icon:<Mail/>
+    },
+    {
+      label: "Contact Us",
+      path: "ContactUs",
+      value: "3",
+      icon:<Info/>
+    },
+  ];
 
   return (
     <Fragment>
       <Drawer
         PaperProps={{
           sx: {
-            marginTop:'56px',
+            marginTop: "56px",
             width: "65%",
             textAlign: "center",
             paddingTop: "10%",
             background: "#222222",
             color: "white",
-            paddingLeft:'2px'
+            paddingLeft: "2px",
           },
         }}
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
+
       >
         <Typography variant="h4" py={2} sx={{ color: "#dbc895" }}>
           Site Title
         </Typography>
-        <List>
+        
+        <Tabs
+          orientation="vertical"
+          textColor="secondary"
+          value={value}
+          onChange={(e, value) => setValue(value)}
+          TabIndicatorProps={{
+            sx: { backgroundColor: "white" },
+          }}
+          aria-label="secondary tabs example"
+        >
+          {tab.map(({ label, path, value, icon }) => (
+            <StyledTab
+              key={value}
+              label={label}
+              value={value}
+              component={Link}
+              to={path}
+              onClick={() => setOpenDrawer(false)}
+              icon={icon}
+            iconPosition="start"
+              disableRipple
+            />
+          ))}
 
+        </Tabs>
 
+        {/* <List>
           <ListItem>
             <Home />
             <Link style={{ textDecoration: "none" }} to="/home">
-              <StyledButton autoFocus={true} onClick={() => setOpenDrawer(false)}>Home</StyledButton>
+              <StyledDrawerButton onClick={() => setOpenDrawer(false)}>Home</StyledDrawerButton>
             </Link>
           </ListItem>
 
           <ListItem>
             <Login />
             <Link style={{ textDecoration: "none" }} to="/login">
-              <StyledButton autoFocus={true} onClick={() => setOpenDrawer(false)}>Login</StyledButton>
+              <StyledDrawerButton onClick={() => setOpenDrawer(false)}>Login</StyledDrawerButton>
             </Link>
           </ListItem>
 
           <ListItem>
             <Search />
             <Link style={{ textDecoration: "none" }} to="/properties">
-              <Button sx={{ color: "white" }} onClick={() => setOpenDrawer(false)}>Properties</Button>
+              <StyledDrawerButton onClick={() => setOpenDrawer(false)}>Properties</StyledDrawerButton>
             </Link>
           </ListItem>
 
           <ListItem>
             <Mail />
             <Link style={{ textDecoration: "none" }} to="/ContactUs">
-              <Button sx={{ color: "white" }} onClick={() => setOpenDrawer(false)}>Contact Us</Button>
+              <StyledDrawerButton onClick={() => setOpenDrawer(false)}>Contact Us</StyledDrawerButton>
             </Link>
           </ListItem>
 
           <ListItem>
             <Info />
             <Link style={{ textDecoration: "none" }} to="/AboutUs">
-              <Button sx={{ color: "white" }} onClick={() => setOpenDrawer(false)}>About Us</Button>
+              <StyledDrawerButton onClick={() => setOpenDrawer(false)}>About Us</StyledDrawerButton>
             </Link>
           </ListItem>
 
-        </List>
+        </List> */}
+
       </Drawer>
 
       <IconButton
@@ -91,7 +147,6 @@ const Drawers = () => {
       >
         <Menu />
       </IconButton>
-
     </Fragment>
   );
 };

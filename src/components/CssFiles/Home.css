@@ -57,7 +57,9 @@ body {
 
 .swiper-button-prev{ 
   color: grey !important;
+  opacity: 0.5;
  } 
 .swiper-button-next { 
    color: grey !important;
+   opacity: 0.5;
 }

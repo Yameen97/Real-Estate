@@ -187,7 +187,7 @@ const SliderItems = () => {
                   <InputLabel
                     size="small"
                     id="demo-simple-select-label"
-                    sx={{ color: "darkgrey" }}
+                    sx={{ color: "darkgrey", opacity:'0.7' }}
                   >
                     Type
                   </InputLabel>
@@ -197,6 +197,7 @@ const SliderItems = () => {
                       my: { xs: "1px", sm: "2px" },
                       width: { xs: "95.3%", sm: "100%" },
                       background: "#3A3B3C",
+                      opacity:'0.8'
                     }}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
@@ -219,7 +220,7 @@ const SliderItems = () => {
 
               {(rentOpened===1) && (
                 <FormControl fullWidth>
-                  <InputLabel size="small" sx={{ color: "darkgrey" }}>
+                  <InputLabel size="small" sx={{ color: "darkgrey", opacity:'0.7' }}>
                     Type
                   </InputLabel>
                   <Select
@@ -228,6 +229,7 @@ const SliderItems = () => {
                       my: { xs: "1px", sm: "2px" },
                       width: { xs: "95.3%", sm: "100%" },
                       background: "#3A3B3C",
+                      opacity:'0.8'
                     }}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
@@ -256,6 +258,7 @@ const SliderItems = () => {
                   width: { xs: "95%", sm: "38.5%" },
                   my: { xs: "1px", sm: "none" },
                   marginRight: { xs: "none", sm: "6px" },
+                  opacity:'0.8'
                 }}
                 id="standard-helpertext"
                 variant="outlined"
@@ -272,6 +275,7 @@ const SliderItems = () => {
                   my: { xs: "1px", sm: "none" },
                   color: "white",
                   marginRight: { xs: "none", sm: "6px" },
+                  opacity:'0.8'
                 }}
                 id="standard-helpertext"
                 variant="outlined"
@@ -285,6 +289,7 @@ const SliderItems = () => {
                 sx={{
                   width: { xs: "95%", sm: "30%" },
                   my: { xs: "1px", sm: "none" },
+                  opacity:'0.8'
                 }}
                 id="standard-helpertext"
                 variant="outlined"

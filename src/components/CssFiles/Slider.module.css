@@ -9,18 +9,18 @@
   
   .imgSlider img {
     width: 100%;
-    height: 360px;
+    height: 380px;
     object-fit: cover;
     resize: both;
     opacity: 0.4;
   }
   
-  .imgSlider-button-prev { 
+  /* .imgSlider-button-prev { 
     color: grey;
   } 
   .imgSlider-button-next { 
     color: grey;
-  }
+  } */
 
   @media (min-width: 600px) {
     .imgSlider img {
