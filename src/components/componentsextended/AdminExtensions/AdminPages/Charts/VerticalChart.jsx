@@ -64,7 +64,7 @@ export function VerticalChart({ xLabels, values, values2 }) {
             borderRadius: 10,
             label: 'Dataset 2',
             data: values2,
-            backgroundColor: 'darkgrey',
+            backgroundColor: '#D3D3D3',
             stack: 'Stack 0',
           },
         ],

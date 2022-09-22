@@ -19,7 +19,7 @@ export default function DoughnutChart({ xLabels, values }) {
       {
         label: "# of Votes",
         data: values,
-        backgroundColor: ["#3974B6", "#222222"],
+        backgroundColor: ["#3974B6", "#D3D3D3"],
         borderColor: ["rgb(240,240,240)"],
         borderWidth: 1,
       },
