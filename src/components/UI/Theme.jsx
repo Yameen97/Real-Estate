@@ -11,6 +11,9 @@ const theme = createTheme({
     third: {
         main: '#dbc895',
       },
+    fourth:{
+      main:'#cc9966'
+    }
   },
 });
 

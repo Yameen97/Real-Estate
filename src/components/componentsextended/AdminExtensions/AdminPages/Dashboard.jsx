@@ -2,7 +2,6 @@ import {
   Avatar,
   Box,
   Button,
-  Card,
   Stack,
   styled,
   Typography,
@@ -19,6 +18,9 @@ import CustomerMapper from "./DashboardExtensions/CustomerMapper";
 import { BorderLinearProgress } from "./Charts/HorizontalChart";
 // import ReactMapGL from 'react-map-gl';
 // import { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { dashActions } from '../../../Redux/DashSlice';
+import { StyledCard, StyledTypography } from "../Cards";
 
 const data = {
   salesLabel: ["Total", "Sale", "Properties for sale"],
@@ -61,17 +63,7 @@ const data = {
   HorizontalChartData: [800, 2456, 456],
 };
 
-const StyledCard = styled(Card)({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  backgroundColor: "#FFFFFF",
-  padding: 0,
-  boxShadow: "1px 1px 10px  darkgrey",
-});
-
-const StyledTypography = styled(Typography)(({ theme }) => ({
+const StyledTypogrphies = styled(Typography)(({ theme }) => ({
   fontSize: "8px",
   color: "darkgrey",
   [theme.breakpoints.up("sm")]: {
@@ -127,23 +119,31 @@ const StyledButton = styled(Button)({
 });
 
 const Dashboard = () => {
+
+  const dispatch= useDispatch();
+
+  const dashHandler = (num) => {
+    dispatch(dashActions.toggle(num));
+ }
+
   // const [viewport, setViewPort] = useState({
   //   latitude: 45.4211,
   //   longitude: -75.6903,
   //   width:'100vw',
   //   height:'100vh', zoom:'10'
   // })
+
   return (
     // Header
     <Stack sx={{ width: "100%", height: "100%", backgroundColor: "#fff" }}>
       <Box
-        flex={1}
+        
         pt={2}
         sx={{ height: "65px", paddingLeft: { xs: "20px", sm: "32px" } }}
       >
-        <Typography variant="h4" fontWeight="bold">
+        <StyledTypography variant="h4">
           Dashboard
-        </Typography>
+        </StyledTypography>
       </Box>
 
       {/* Data Stacks */}
@@ -153,12 +153,12 @@ const Dashboard = () => {
         {/* Top left box with 4 Doughnut charts */}
 
         <Box
-          flex={3}
+          flex={1}
           mx={2}
           sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}
         >
 
-          <Stack flex={7} spacing={2}>
+          <Stack flex={7} spacing={2} sx={{height: { xs: "220px", sm: "280px" }}}>
             <Stack
               flex={9}
               direction="row"
@@ -176,8 +176,8 @@ const Dashboard = () => {
                 }}
               >
                 <Stack pt={0.2} pr={0.3} sx={{ width: "82%" }}>
-                  <StyledTypography>{data.salesLabel[2]}</StyledTypography>
-                  <Typography fontWeight="bold">{data.sale[1]}</Typography>
+                  <StyledTypogrphies>{data.salesLabel[2]}</StyledTypogrphies>
+                  <StyledTypography>{data.sale[1]}</StyledTypography>
 
                   <Stack sx={{ width: "110%" }} alignItems="flex-end">
                     <StyledChartBox>
@@ -201,8 +201,8 @@ const Dashboard = () => {
                 }}
               >
                 <Stack pt={0.2} pr={0.3} sx={{ width: "82%" }}>
-                  <StyledTypography>{data.rentLabel[2]}</StyledTypography>
-                  <Typography fontWeight="bold">{data.rent[1]}</Typography>
+                  <StyledTypogrphies>{data.rentLabel[2]}</StyledTypogrphies>
+                  <StyledTypography>{data.rent[1]}</StyledTypography>
 
                   <Stack sx={{ width: "110%" }} alignItems="flex-end">
                     <StyledChartBox>
@@ -225,8 +225,8 @@ const Dashboard = () => {
                 }}
               >
                 <Stack pt={0.2} pr={0.3} sx={{ width: "82%" }}>
-                  <StyledTypography>{data.totalLabel[2]}</StyledTypography>
-                  <Typography fontWeight="bold">{data.total[1]}</Typography>
+                  <StyledTypogrphies>{data.totalLabel[2]}</StyledTypogrphies>
+                  <StyledTypography>{data.total[1]}</StyledTypography>
 
                   <Stack sx={{ width: "110%" }} alignItems="flex-end">
                     <StyledChartBox>
@@ -252,8 +252,8 @@ const Dashboard = () => {
               >
                 <Stack p={1} mt={1} direction="row" sx={{ width: "100%" }}>
                   <Box sx={{ width: { xs: "80px", sm: "120px" } }}>
-                    <StyledTypography>{data.cityLabel[2]}</StyledTypography>
-                    <Typography fontWeight="bold">{data.city[1]}</Typography>
+                    <StyledTypogrphies>{data.cityLabel[2]}</StyledTypogrphies>
+                    <StyledTypography>{data.city[1]}</StyledTypography>
                   </Box>
                   <Box sx={{ width: "70%" }} />
                   <StyledCityChartBox>
@@ -278,7 +278,7 @@ const Dashboard = () => {
           >
             <StyledCard
               sx={{
-                height: { xs: "220px", sm: "100%" },
+                height: { xs: "220px", sm: "280px" },
                 width: "100%",
                 borderRadius: "16px",
               }}
@@ -291,12 +291,12 @@ const Dashboard = () => {
                 justifyContent="space-between"
               >
                 <Stack>
-                  <StyledTypography>
+                  <StyledTypogrphies>
                     {data.VerticalChartTopText}
-                  </StyledTypography>
-                  <Typography fontWeight="bold">
+                  </StyledTypogrphies>
+                  <StyledTypography>
                     {data.VerticalChartTopData}
-                  </Typography>
+                  </StyledTypography>
                 </Stack>
                 <Stack direction="row" spacing={0.5} alignItems="center">
                   <StyledButton variant="contained">Today</StyledButton>
@@ -327,7 +327,7 @@ const Dashboard = () => {
         {/* Lower Column Box begins here */}
 
         <Box
-          flex={9}
+          flex={10}
           mx={2}
           sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}
         >
@@ -365,9 +365,9 @@ const Dashboard = () => {
                     direction="row"
                     justifyContent="space-between"
                   >
-                    <Typography sx={{ fontSize: "11px", fontWeight: "bold" }}>
+                    <StyledTypography sx={{ fontSize: "11px"}}>
                       {data.HorizontalChartText[0]}
-                    </Typography>
+                    </StyledTypography>
                     <Typography sx={{ fontSize: "9px" }}>
                       {data.HorizontalChartData[0]}
                       {data.HorizontalChartUnits[0]}
@@ -387,9 +387,9 @@ const Dashboard = () => {
                     direction="row"
                     justifyContent="space-between"
                   >
-                    <Typography sx={{ fontSize: "11px", fontWeight: "bold" }}>
+                    <StyledTypography sx={{ fontSize: "11px"}}>
                       {data.HorizontalChartText[1]}
-                    </Typography>
+                    </StyledTypography>
                     <Typography sx={{ fontSize: "9px" }}>
                       {data.HorizontalChartData[1]}
                       {data.HorizontalChartUnits[1]}
@@ -409,9 +409,9 @@ const Dashboard = () => {
                     direction="row"
                     justifyContent="space-between"
                   >
-                    <Typography sx={{ fontSize: "11px", fontWeight: "bold" }}>
+                    <StyledTypography sx={{ fontSize: "11px"}}>
                       {data.HorizontalChartText[2]}
-                    </Typography>
+                    </StyledTypography>
                     <Typography sx={{ fontSize: "9px" }}>
                       {data.HorizontalChartData[2]}
                       {data.HorizontalChartUnits[2]}
@@ -467,7 +467,7 @@ const Dashboard = () => {
                 borderRadius: "16px",
               }}
             >
-              <Stack px={1} pt={2} spacing={1} sx={{ width: "100%" }}>
+              <Stack px={1} pt={2} sx={{ width: "100%" }}>
 
                 {/* Icons Stack */}
 
@@ -491,11 +491,11 @@ const Dashboard = () => {
                         <StyledLineTypography>
                           {data.lineChartTopText[0]}
                         </StyledLineTypography>
-                        <Typography
-                          sx={{ fontSize: "11px", fontWeight: "bold" }}
+                        <StyledTypography
+                          sx={{ fontSize: "11px"}}
                         >
                           {data.lineChartTopData[0]}
-                        </Typography>
+                        </StyledTypography>
                       </Box>
                     </Stack>
                   </Box>
@@ -517,11 +517,11 @@ const Dashboard = () => {
                         <StyledLineTypography>
                           {data.lineChartTopText[1]}
                         </StyledLineTypography>
-                        <Typography
-                          sx={{ fontSize: "11px", fontWeight: "bold" }}
+                        <StyledTypography
+                          sx={{ fontSize: "11px"}}
                         >
                           {data.lineChartTopData[1]}
-                        </Typography>
+                        </StyledTypography>
                       </Box>
                     </Stack>
                   </Box>
@@ -543,11 +543,11 @@ const Dashboard = () => {
                         <StyledLineTypography>
                           {data.lineChartTopText[2]}
                         </StyledLineTypography>
-                        <Typography
-                          sx={{ fontSize: "11px", fontWeight: "bold" }}
+                        <StyledTypography
+                          sx={{ fontSize: "11px"}}
                         >
                           {data.lineChartTopData[2]}
-                        </Typography>
+                        </StyledTypography>
                       </Box>
                     </Stack>
                   </Box>
@@ -557,10 +557,11 @@ const Dashboard = () => {
 
                 <Stack alignItems="center">
                   <Box
+                    mr={1}
                     pt={1}
                     sx={{
                       height: { xs: "160px", sm: "200px" },
-                      width: { xs: "280px", sm: "280px", md: "360px"},
+                      width: { xs: "280px", sm: "280px", md: "390px"},
                       position: "relative",
                     }}
                   >
@@ -615,28 +616,28 @@ const Dashboard = () => {
 
             <StyledCard
               sx={{
-                height: { xs: "280px", sm: "360px" },
+                height: { xs: "340px", sm: "380px" },
                 width: "100%",
                 marginBottom: "16px",
                 borderRadius: "16px",
               }}
             >
               <Stack sx={{height:'100%'}}>
-                <Stack flex={1} pt={0.8} alignItems='center' justifyContent='center'>
-              <Typography fontWeight='bold'>Customer Review</Typography>
+                <Stack flex={1} pt={0.8} mb={0.4} alignItems='center' justifyContent='center'>
+              <StyledTypography>Customer Review</StyledTypography>
               </Stack>
               <Stack flex={9}>
                     <DashMapper/>
               </Stack>
               <Stack px={1} mb={1.8} flex={2} justifyContent='flex-end'>
-                  <Button variant='contained' sx={{width:'100%', background:'#3974B6'}}>See More</Button>
+                  <Button variant='contained' onClick={(e) => dashHandler('4')} sx={{width:'100%', background:'#3974B6'}}>See More</Button>
               </Stack>
               </Stack>
             </StyledCard>
               
               {/* Customer block */}
 
-            <Stack sx={{ width: "100%", marginLeft: { xs: "8px", sm: "0px" } }}>
+            <Stack sx={{ width: "100%"}}>
               <StyledCard
                 sx={{
                   height: { xs: "360px", sm: "350px" },
@@ -645,13 +646,13 @@ const Dashboard = () => {
               >
                 <Stack sx={{height:'100%'}} >
                 <Stack flex={1} pt={1.6} pb={0.6} alignItems='center' justifyContent='center'>
-              <Typography fontWeight='bold'>Customers</Typography>
+              <StyledTypography>Customers</StyledTypography>
               </Stack>
               <Stack flex={9} sx={{width:'14rem'}}  justifyContent='flex-start'>
                     <CustomerMapper/>
               </Stack>
               <Stack px={1} mb={2} flex={2} justifyContent='flex-end'>
-                  <Button variant='contained' sx={{background:'#3974B6'}}>+Add New Customer</Button>
+                  <Button variant='contained' onClick={(e) => dashHandler('3')} sx={{background:'#3974B6'}}>+Add New Customer</Button>
               </Stack>
               </Stack>
             </StyledCard>

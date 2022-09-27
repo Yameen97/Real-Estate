@@ -1,9 +1,18 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Stack, styled, Typography } from '@mui/material'
 import React from 'react'
+import FetchCustomers from './CustomerExtensions/FetchCustomers';
+
+const StyledSearchResultBox = styled(Box)({
+  display: "flex",
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+});
 
 const Customers = () => {
   return (
-    // Header
+
+    <Stack>
+     {/* Header */}
     <Box
       pt={2}
       sx={{ height: "65px", paddingLeft: { xs: "20px", sm: "32px" } }}
@@ -12,6 +21,11 @@ const Customers = () => {
         Customers
       </Typography>
     </Box>
+
+    <StyledSearchResultBox>
+       <FetchCustomers/>
+      </StyledSearchResultBox>
+    </Stack>
   )
 }
 

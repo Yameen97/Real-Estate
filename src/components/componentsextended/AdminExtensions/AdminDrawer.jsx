@@ -6,7 +6,7 @@ const AdminDrawer = () => {
 
 
   return (
-    <Box sx={{height:{xs:'1800px', sm:'1200px'} , width:'300px', background:'#222222', display:{xs:'none', sm:'none', md:'block'}}}>
+    <Box sx={{height:'2400px' , width:'300px', background:'#222222', display:{xs:'none', sm:'none', md:'block'}}}>
       <LogoSvg/>
       <AccordionData/>
       
