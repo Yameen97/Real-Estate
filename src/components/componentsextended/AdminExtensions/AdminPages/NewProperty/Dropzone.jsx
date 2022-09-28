@@ -67,7 +67,7 @@ export function StyledDropzone(props) {
       <aside>
         <br/>
         <Box px={2}>
-        <h4>Accepted files:</h4>
+        <h4>Selected files:</h4>
         <ul>{acceptedFileItems}</ul>
         </Box>
       </aside>

@@ -137,7 +137,7 @@ const Dashboard = () => {
     // Header
     <Stack sx={{ width: "100%", height: "100%", backgroundColor: "#fff" }}>
       <Box
-        
+        mb={2}
         pt={2}
         sx={{ height: "65px", paddingLeft: { xs: "20px", sm: "32px" } }}
       >

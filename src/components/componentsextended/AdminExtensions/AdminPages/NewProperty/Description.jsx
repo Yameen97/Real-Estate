@@ -5,6 +5,8 @@ import { StyledTextField } from "./Info";
 const Description = () => {
   return (
     <Stack mt={2}>
+
+      {/* Use textareaautosize instead */}
       <StyledTextField
         sx={{ height: "150px" }}
         id="standard-helpertext"

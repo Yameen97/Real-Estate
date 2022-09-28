@@ -10,6 +10,8 @@ const SimpleMap= ({ latitude, longitude }) =>{
     map,
     title: 'Office'
     });
+
+    
     return marker;
    };
 
@@ -36,6 +38,7 @@ const SimpleMap= ({ latitude, longitude }) =>{
           lat={74.3587}
           text="Head Office"
         />
+        
       </GoogleMapReact>
     </div>
   );

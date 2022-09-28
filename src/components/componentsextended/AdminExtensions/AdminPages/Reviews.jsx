@@ -19,6 +19,7 @@ const Reviews = () => {
     <Stack>
       {/* Header */}
       <Box
+        mb={2}
         pt={2}
         sx={{ height: "65px", paddingLeft: { xs: "20px", sm: "32px" } }}
       >
@@ -27,7 +28,7 @@ const Reviews = () => {
         </Typography>
       </Box>
 
-      <Box sx={{ paddingLeft: { xs: "0px", sm: "32px" }, width:{xs:'100%', sm:'360px'}, borderColor: "divider" }}>
+      <Box sx={{ paddingLeft: { xs: "0px", sm: "48px" }, width:{xs:'100%', sm:'380px'}, borderColor: "divider" }}>
         <Tabs
           sx={{background:'#E8E8E8', border:'none', borderRadius:'10px'}}
           value={value}

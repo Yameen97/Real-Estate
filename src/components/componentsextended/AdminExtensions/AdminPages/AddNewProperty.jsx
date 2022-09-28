@@ -14,6 +14,7 @@ const AddNewProperty = () => {
 
      {/* Header */}
     <Box
+      mb={6}
       pt={2}
       sx={{ height: "65px", paddingLeft: { xs: "20px", sm: "32px" } }}
     >
@@ -22,7 +23,7 @@ const AddNewProperty = () => {
       </StyledTypography>
     </Box>
 
-    <StyledCard sx={{ margin:'8%', padding:'5%'}}>
+    <StyledCard sx={{ marginLeft:'8%', marginRight:'8%', padding:'5%'}}>
 
       <Box sx={{width:'100%', display:'flex', flexDirection:{xs:'column', sm:'row'}}}>
         
@@ -102,7 +103,7 @@ const AddNewProperty = () => {
 
     </StyledCard>
     
-    <Stack mt={-2} mb={4} direction='row' width='90%' justifyContent='flex-end'>
+    <Stack mt={4} mb={4} direction='row' width='90%' justifyContent='flex-end'>
         <Stack direction='row' spacing={1}>
           <Button variant='contained' sx={{background:'grey'}}>Add to draft</Button>
           <Button variant='contained' sx={{background:'#3974B6'}}>Publish</Button>

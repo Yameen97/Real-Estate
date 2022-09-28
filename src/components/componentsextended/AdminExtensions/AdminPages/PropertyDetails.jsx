@@ -20,6 +20,7 @@ const PropertyDetails = () => {
     <Stack>
       {/* Header */}
       <Box
+        mb={1}
         pt={2}
         sx={{ height: "65px", paddingLeft: { xs: "20px", sm: "32px" } }}
       >
